@@ -1,26 +1,26 @@
-# Python
+Python
 *.pyc
-__pycache__/
+pycache/
 *.pyo
 *.pyd
 .Python
 *.egg-info/
 dist/
 build/
-
-# Virtual environment
+Virtual environment
 venv/
 .venv/
-
-# Environment variables
+Environment variables
 .env
-
-# Database
+Database
 books.db
-
-# IDE
+books.sqbpro
+IDE
 .idea/
 *.iml
-
-# Logs
+Logs
 *.log
+macOS
+.DS_Store
+Misnamed files
+requirments.txt

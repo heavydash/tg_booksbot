@@ -117,7 +117,7 @@ def register_handlers(dp: Dispatcher) -> None:
                         reply_markup=get_main_keyboard()
                     )
         except Exception as e:
-            print(f"Error in search_books: {str(e)}") #Откладка
+            print(f"Error in search_books: {str(e)}") #Отладка
             await message.reply(f"Ошибка при поиске книг: {str(e)}", reply_markup=get_main_keyboard())
         await state.clear()
 
