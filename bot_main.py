@@ -1,18 +1,23 @@
+import asyncio
 import logging
-from aiogram import Bot, Dispatcher, types
-from aiogram.contrib.fsm_storage.memory import MemoryStorage
-from config import API_TOKEN
+from app import Application
 
-from handlers.start import register_handlers
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
+logger = logging.getLogger(__name__)
 
-logging.basicConfig(level=logging.INFO)
 
-bot = Bot(token=API_TOKEN)
-storage = MemoryStorage()
-dp = Dispatcher(bot, storage=storage)
+async def main():
+    """Главная функция - запуск приложения"""
+    app = Application()
+    await app.start()
 
-register_handlers(dp)
 
-if __name__ == '__main__':
-    from aiogram import executor
-    executor.start_polling(dp, skip_updates=True)
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        logger.info("App has been stopped")

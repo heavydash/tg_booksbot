@@ -1,5 +1,5 @@
 import os
-from config import BOOKS_DIR
+from config import FILES_DIR as BOOKS_DIR
 
 class FileStorage:
     @staticmethod
